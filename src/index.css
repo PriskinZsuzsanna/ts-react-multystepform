@@ -53,7 +53,7 @@ h1 {
 
 #root {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     background: var(--magnolia);
     display: flex;
     justify-content: center;
@@ -62,13 +62,13 @@ h1 {
 
 .container {
     width: min(100%, 1600px);
-    min-height: 100vh;
+    min-height: 100dvh;
     position: relative;
 }
 
 aside {
     width: 100%;
-    height: 26vh;
+    height: 26dvh;
     margin-inline: auto;
     padding-block: 1rem;
     background: url('assets/images/bg-sidebar-mobile.svg') no-repeat center/cover;
@@ -89,7 +89,7 @@ main {
 }
 
 footer {
-    height: min(5rem, 9vh);
+    height: min(5rem, 9dvh);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -117,7 +117,7 @@ footer {
     }
 
     aside {
-        height: calc(100% - 3rem);
+        height: calc(100dvh - 3rem);
         margin: 1.5rem;
         padding-inline: 1rem;
         border-radius: 1rem;
@@ -161,6 +161,6 @@ footer {
     }
 
     main {
-        min-height: 70vh;
+        min-height: 70dvh;
     }
 }
