@@ -1,0 +1,51 @@
+button{
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    scale: 1;
+    transition: scale .3s ease-in-out;
+}
+
+button:hover {
+    scale: 1.05
+}
+
+
+.btn-primary {
+    padding: .6rem 1rem;
+    background: var(--marine-blue);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: transparent;
+    font-weight: 500;
+    color: var(--cool-gray);
+    text-align: left;
+    position: absolute;
+    left: calc(5% + 1.5rem);;
+}
+
+.btn-purple {
+    background: var(--purplish-blue);
+    color: var(--white)
+}
+
+.btn-purple:hover {
+    opacity: .6;
+}
+
+@media (min-width: 992px) {
+    /*button {
+        font-size: 1.1rem;
+    }*/
+
+    .btn-primary {
+        padding: 1rem 2rem;
+        width: auto;
+    }
+
+    .btn-secondary {
+        left: calc(10% + 3rem);;
+    }
+}
