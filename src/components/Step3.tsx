@@ -4,15 +4,23 @@ type Step3Props = {
   userdata: Data,
   saveAddOns: (e: React.ChangeEvent) => void
   plusServices: PlusServices,
+  planError: boolean
 }
 
-const Step3 = ({ userdata, saveAddOns, plusServices}: Step3Props) => {
+const Step3 = ({ userdata, saveAddOns, plusServices, planError}: Step3Props) => {
 
   return (
     <section className='section-3'>
       <header>
         <h1>Pick add-ons</h1>
         <p>Add-ons help enhance your gaming experience.</p>
+        {
+          userdata.plan.planName == '' && (
+            <div className="plan-error">
+              <p>Choose a plan first!</p>
+            </div>
+          )
+        }
       </header>
 
       <div className="add-ons">

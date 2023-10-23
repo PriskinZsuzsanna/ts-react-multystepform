@@ -8,15 +8,23 @@ type Step2Props = {
   userdata: Data,
   saveUserChoice: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
   saveExpiration: () => void
+  planError: boolean
 }
 
-const Step2 = ({ userdata, saveUserChoice, saveExpiration }: Step2Props) => {
+const Step2 = ({ userdata, saveUserChoice, saveExpiration, planError, }: Step2Props) => {
 
   return (
     <section className=''>
       <header>
         <h1>Select your plan</h1>
         <p>You have the option of monthly or yearly billing.</p>
+        {
+          planError && (
+            <div className="plan-error">
+              <p>Please choose a plan!</p>
+            </div>
+          )
+        }
       </header>
 
       <div className="plans">
@@ -31,8 +39,8 @@ const Step2 = ({ userdata, saveUserChoice, saveExpiration }: Step2Props) => {
                 <p>$9/mo</p>
               ) : (
                 <>
-                <p>$90/yr</p>
-                <small className='free'>2 month free</small>
+                  <p>$90/yr</p>
+                  <small className='free'>2 month free</small>
                 </>
               )}
             </div>
@@ -48,8 +56,8 @@ const Step2 = ({ userdata, saveUserChoice, saveExpiration }: Step2Props) => {
                 <p>$12/mo</p>
               ) : (
                 <>
-                <p>$120/yr</p>
-                <small className='free'>2 month free</small>
+                  <p>$120/yr</p>
+                  <small className='free'>2 month free</small>
                 </>
               )}
             </div>
@@ -65,8 +73,8 @@ const Step2 = ({ userdata, saveUserChoice, saveExpiration }: Step2Props) => {
                 <p>$15/mo</p>
               ) : (
                 <>
-                <p>$150/yr</p>
-                <small className='free'>2 month free</small>
+                  <p>$150/yr</p>
+                  <small className='free'>2 month free</small>
                 </>
               )}
             </div>

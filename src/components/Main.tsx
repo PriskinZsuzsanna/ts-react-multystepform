@@ -23,11 +23,13 @@ type MainProps = {
   checkUserInput(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
   error: ErrorObj
   setError: React.Dispatch<React.SetStateAction<ErrorObj>>,
+  checkPlan(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
+  planError: boolean
 }
 
 const Main = ({ page, setPage, userdata, setUserdata, success, saveUserInput, saveUserChoice,
   saveExpiration, setSuccess, changePage, saveAddOns, plusServices, setPlusServices, checkUserInput, error,
-  setError }: MainProps) => {
+  setError, checkPlan, planError,}: MainProps) => {
   return (
     <main style={{ position: 'relative' }}>
       {
@@ -43,14 +45,16 @@ const Main = ({ page, setPage, userdata, setUserdata, success, saveUserInput, sa
         page == 2 && (
           <Step2 userdata={userdata}
             saveUserChoice={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => saveUserChoice(e)}
-            saveExpiration={saveExpiration} />
+            saveExpiration={saveExpiration}
+            planError={planError}/>
         )
       }
       {
         page == 3 && (
           <Step3 userdata={userdata}
             saveAddOns={(e: React.ChangeEvent) => saveAddOns(e)}
-            plusServices={plusServices} />
+            plusServices={plusServices}
+            planError={planError} />
         )
       }
       {
@@ -64,12 +68,13 @@ const Main = ({ page, setPage, userdata, setUserdata, success, saveUserInput, sa
         )
       }
 
-      <FooterDesktop page={page}  success={success} setSuccess={setSuccess}
+      <FooterDesktop page={page} success={success} setSuccess={setSuccess}
         changePage={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => changePage(e)}
         userdata={userdata} setUserdata={setUserdata}
-        setPlusServices={setPlusServices} 
+        setPlusServices={setPlusServices}
         checkUserInput={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => checkUserInput(e)}
-        />
+        checkPlan={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => checkPlan(e)}
+      />
     </main>
   )
 }

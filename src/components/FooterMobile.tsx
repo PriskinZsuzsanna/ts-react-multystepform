@@ -10,10 +10,11 @@ type FooterProps = {
   setUserdata: React.Dispatch<React.SetStateAction<Data>>
   setPlusServices: React.Dispatch<React.SetStateAction<PlusServices>>
   checkUserInput(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
+  checkPlan(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
 
 const FooterMobile = ({ page,  success, setSuccess, changePage, userdata, setUserdata, setPlusServices, 
-  checkUserInput }: FooterProps) => {
+  checkUserInput, checkPlan }: FooterProps) => {
 
   const confirmOrder = () => {
     setSuccess(true)
@@ -46,7 +47,7 @@ const FooterMobile = ({ page,  success, setSuccess, changePage, userdata, setUse
         {page == 2 && (
           <>
             <button onClick={(e) => changePage(e)} className='btn-secondary'>Go Back</button>
-            <button onClick={(e) => changePage(e)} className='btn-primary'>Next Step</button>
+            <button onClick={(e) => checkPlan(e)} className='btn-primary'>Next Step</button>
           </>
         )}
         {page == 3 && (
