@@ -131,8 +131,7 @@ function App() {
   return (
     <div className='container'>
       <Sidebar page={page} changePage={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => changePage(e)}
-        checkUserInput={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => checkUserInput(e)}
-        checkPlan={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => checkPlan(e)}  />
+        checkUserInput={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => checkUserInput(e)}/>
       <Main
         page={page}
         setPage={setPage}

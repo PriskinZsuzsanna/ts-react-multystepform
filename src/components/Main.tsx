@@ -53,8 +53,7 @@ const Main = ({ page, setPage, userdata, setUserdata, success, saveUserInput, sa
         page == 3 && (
           <Step3 userdata={userdata}
             saveAddOns={(e: React.ChangeEvent) => saveAddOns(e)}
-            plusServices={plusServices}
-            planError={planError} />
+            plusServices={plusServices} />
         )
       }
       {

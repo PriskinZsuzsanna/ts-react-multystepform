@@ -5,10 +5,9 @@ type SidebarProps = {
     page: number,
     changePage(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
      checkUserInput(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
-     checkPlan(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
 }
 
-const Sidebar = ({ page, changePage, checkUserInput ,checkPlan}: SidebarProps) => {
+const Sidebar = ({ page, changePage, checkUserInput}: SidebarProps) => {
 
     useEffect(() => {
 

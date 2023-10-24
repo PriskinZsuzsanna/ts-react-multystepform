@@ -3,11 +3,10 @@ import { Data, PlusServices } from "../types/types"
 type Step3Props = {
   userdata: Data,
   saveAddOns: (e: React.ChangeEvent) => void
-  plusServices: PlusServices,
-  planError: boolean
+  plusServices: PlusServices
 }
 
-const Step3 = ({ userdata, saveAddOns, plusServices, planError}: Step3Props) => {
+const Step3 = ({ userdata, saveAddOns, plusServices}: Step3Props) => {
 
   return (
     <section className='section-3'>
